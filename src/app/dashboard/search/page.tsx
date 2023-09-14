@@ -4,7 +4,7 @@ import React from "react";
 import useSWR from "swr";
 
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
-const query = "grenade";
+const query = "started from the bottom drake";
 const apiKey = process.env.NEXT_PUBLIC_API_KEY || "ChickenWhopper";
 
 const page = () => {
@@ -16,7 +16,12 @@ const page = () => {
     if (error) return <div>Failed to load</div>;
     if (isLoading) return <div>Loading ...</div>;
 
-    return <div>{data.items[0].snippet.title}</div>;
+    return (
+        <div>
+            {data.items[0].snippet.title}
+            {data.items[0].snippet.channelTitle}
+        </div>
+    );
 };
 
 export default page;
