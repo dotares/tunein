@@ -16,12 +16,7 @@ const page = () => {
     if (error) return <div>Failed to load</div>;
     if (isLoading) return <div>Loading ...</div>;
 
-    return (
-        <div>
-            {data.items[0].snippet.title}
-            {data.items[0].snippet.channelTitle}
-        </div>
-    );
+    return <div>{data.key}</div>;
 };
 
 export default page;
