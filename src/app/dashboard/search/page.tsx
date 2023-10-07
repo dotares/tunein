@@ -17,7 +17,7 @@ const page = () => {
                 <SearchBar />
             </div>
             <div>
-                <SearchResults query={search} />
+                {!search ? "Enter a tune" : <SearchResults query={search} />}
             </div>
         </div>
     );

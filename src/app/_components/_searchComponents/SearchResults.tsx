@@ -35,7 +35,7 @@ const SearchResults: React.FC<SearchResultsProps> = ({ query }) => {
                 videoCover={video.videoCover}
                 videoTitle={video.videoTitle}
                 videoArtist={video.videoArtist}
-                videoId={video.videoArtist}
+                videoId={video.videoId}
             />
         );
     });

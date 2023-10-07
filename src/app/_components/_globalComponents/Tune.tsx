@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import { ResultVideoObject } from "../_searchComponents/SearchResults";
 
 const Tune: React.FC<ResultVideoObject> = ({
@@ -8,8 +9,7 @@ const Tune: React.FC<ResultVideoObject> = ({
     videoId,
 }) => {
     return (
-        // <Link href={videoId}>
-        <div>
+        <Link href={`/dashboard/play?l=${videoId}`}>
             <div>
                 <img src={videoCover} alt="Song cover" />
             </div>
@@ -17,8 +17,7 @@ const Tune: React.FC<ResultVideoObject> = ({
                 <div>{videoTitle}</div>
                 <div>by {videoArtist}</div>
             </div>
-        </div>
-        // </Link>
+        </Link>
     );
 };
 
