@@ -3,7 +3,7 @@
 import React from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
-import Play from "../../_components/_playComponents/Play";
+import Play from "../../_components/_globalComponents/Play";
 
 const page = () => {
     const searchParams = useSearchParams();
