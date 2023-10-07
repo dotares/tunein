@@ -5,6 +5,7 @@ import SearchResults from "../../_components/_searchComponents/SearchResults";
 import SearchBar from "../../_components/_dashboardComponents/SearchBar";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
+import Playbar from "@/app/_components/_dashboardComponents/Playbar";
 
 const page = () => {
     const searchParams = useSearchParams();
@@ -18,6 +19,9 @@ const page = () => {
             </div>
             <div>
                 {!search ? "Enter a tune" : <SearchResults query={search} />}
+            </div>
+            <div>
+                <Playbar />
             </div>
         </div>
     );

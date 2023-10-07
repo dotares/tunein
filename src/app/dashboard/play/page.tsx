@@ -4,6 +4,7 @@ import React from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import Play from "../../_components/_globalComponents/Play";
+import Playbar from "../../_components/_dashboardComponents/Playbar";
 
 const page = () => {
     const searchParams = useSearchParams();
@@ -12,7 +13,10 @@ const page = () => {
     return (
         <div>
             <Link href={"/dashboard/search?r="}>Go back</Link>
-            <div>{search ? <Play url={search} /> : null}</div>
+            {/* <div>{search ? <Play url={search} /> : null}</div> */}
+            <div>
+                <Playbar />
+            </div>
         </div>
     );
 };
