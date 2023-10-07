@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "next/image";
 import { ResultVideoObject } from "../_searchComponents/SearchResults";
 
 const Tune: React.FC<ResultVideoObject> = ({
