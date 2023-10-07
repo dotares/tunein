@@ -4,9 +4,20 @@ import React from "react";
 import useSWR from "swr";
 import Tune from "../_globalComponents/Tune";
 
-const fetcher = (url) => fetch(url).then((r) => r.json());
+const fetcher = (url: string) => fetch(url).then((r) => r.json());
 
-const SearchResults = ({ query }) => {
+interface SearchResultsProps {
+    query: string;
+}
+
+export interface ResultVideoObject {
+    videoCover: string;
+    videoName: string;
+    videoArtist: string;
+    videoId: string;
+}
+
+const SearchResults: React.FC<SearchResultsProps> = ({ query }) => {
     const { data, error } = useSWR(
         `https://yt-http-api.onrender.com/listen?t=${query}`,
         fetcher
@@ -17,7 +28,7 @@ const SearchResults = ({ query }) => {
 
     console.log(data);
 
-    return data.map((video) => {
+    return data.map((video: ResultVideoObject) => {
         return (
             <Tune
                 videoCover={video.videoCover}
