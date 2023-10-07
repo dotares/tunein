@@ -4,7 +4,7 @@ import React from "react";
 
 const SearchBar = () => {
     return (
-        <form action="submit">
+        <form action="/dashboard/search">
             <input type="text" placeholder="Search" />
             <button>Go</button>
         </form>

@@ -2,25 +2,31 @@
 
 import React from "react";
 import useSWR from "swr";
+import Tune from "../_globalComponents/Tune";
 
-const fetcher = (...args) => fetch(...args).then((res) => res.json());
+const fetcher = (url) => fetch(url).then((r) => r.json());
 
-const SearchResult = () => {
-    const { data, error, isLoading } = useSWR("example api", fetcher);
+const SearchResults = ({ query }) => {
+    const { data, error } = useSWR(
+        `https://yt-http-api.onrender.com/listen?t=${query}`,
+        fetcher
+    );
 
     if (error) return <div>Failed to load, please retry</div>;
-    if (isLoading) return <div>Loading ...</div>;
+    if (!data) return <div>Loading ...</div>;
 
-    return (
-        <div>
-            <div>Image element for cover</div>
-            <div>
-                <div>Tune name</div>
-                <div>Artist name</div>
-            </div>
-            <div>add to playlist and star button</div>
-        </div>
-    );
+    console.log(data);
+
+    return data.map((video) => {
+        return (
+            <Tune
+                videoCover={video.videoCover}
+                videoName={video.videoName}
+                videoArtist={video.videoArtist}
+                videoId={video.videoArtist}
+            />
+        );
+    });
 };
 
-export default SearchResult;
+export default SearchResults;
