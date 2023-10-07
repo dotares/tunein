@@ -8,7 +8,7 @@ interface PlayProps {
 }
 
 const Play: React.FC<PlayProps> = ({ url }) => {
-    const [isPlaying, setIsPlaying] = useState(false);
+    const [isPlaying, setIsPlaying] = useState(true);
     const ref = useRef(null);
 
     return (
@@ -17,6 +17,8 @@ const Play: React.FC<PlayProps> = ({ url }) => {
                 playing={isPlaying}
                 ref={ref}
                 url={`https://www.youtube.com/watch?v=${url}`}
+                height={0}
+                width={0}
             />
             <button
                 onClick={() => {
