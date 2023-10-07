@@ -6,6 +6,8 @@ import Playlists from "../_components/_dashboardComponents/Playlists";
 import Playbar from "../_components/_dashboardComponents/Playbar";
 import Profile from "../_components/_dashboardComponents/Profile";
 
+import Link from "next/link";
+
 const page = () => {
     return (
         <div>

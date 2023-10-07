@@ -2,7 +2,9 @@
 
 import React from "react";
 import SearchResults from "../../_components/_searchComponents/SearchResults";
+import SearchBar from "../../_components/_dashboardComponents/SearchBar";
 import { useSearchParams } from "next/navigation";
+import Link from "next/link";
 
 const page = () => {
     const searchParams = useSearchParams();
@@ -10,7 +12,13 @@ const page = () => {
 
     return (
         <div>
-            <SearchResults query={search} />
+            <div>
+                <Link href={"/dashboard"}>Go Back</Link>
+                <SearchBar />
+            </div>
+            <div>
+                <SearchResults query={search} />
+            </div>
         </div>
     );
 };

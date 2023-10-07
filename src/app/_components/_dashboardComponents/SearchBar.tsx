@@ -15,7 +15,7 @@ const SearchBar = () => {
                 }}
                 type="text"
             />
-            <Link href={`dashboard/search?r=${value}`}>Go</Link>
+            <Link href={`/dashboard/search?r=${value}`}>Go</Link>
         </div>
     );
 };
