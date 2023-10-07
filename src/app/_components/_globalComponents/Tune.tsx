@@ -4,17 +4,19 @@ import { ResultVideoObject } from "../_searchComponents/SearchResults";
 
 const Tune: React.FC<ResultVideoObject> = ({
     videoCover,
-    videoName,
+    videoTitle,
     videoArtist,
     videoId,
 }) => {
     return (
         // <Link href={videoId}>
         <div>
-            {/* <Image href={videoCover} /> */}
             <div>
-                <div>{videoName}</div>
-                <div>{videoArtist}</div>
+                <img src={videoCover} alt="Song cover" />
+            </div>
+            <div>
+                <div>{videoTitle}</div>
+                <div>by {videoArtist}</div>
             </div>
         </div>
         // </Link>

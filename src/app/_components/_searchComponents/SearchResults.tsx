@@ -7,12 +7,12 @@ import Tune from "../_globalComponents/Tune";
 const fetcher = (url: string) => fetch(url).then((r) => r.json());
 
 interface SearchResultsProps {
-    query: string;
+    query: string | null;
 }
 
 export interface ResultVideoObject {
     videoCover: string;
-    videoName: string;
+    videoTitle: string;
     videoArtist: string;
     videoId: string;
 }
@@ -28,11 +28,12 @@ const SearchResults: React.FC<SearchResultsProps> = ({ query }) => {
 
     console.log(data);
 
-    return data.map((video: ResultVideoObject) => {
+    return data.map((video: ResultVideoObject, index: number) => {
         return (
             <Tune
+                key={index}
                 videoCover={video.videoCover}
-                videoName={video.videoName}
+                videoTitle={video.videoTitle}
                 videoArtist={video.videoArtist}
                 videoId={video.videoArtist}
             />
