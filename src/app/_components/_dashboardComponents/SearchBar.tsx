@@ -1,14 +1,9 @@
 "use client";
 
-import React from "react";
+import React, { useRef } from "react";
 
 const SearchBar = () => {
-    return (
-        <form action="/dashboard/search">
-            <input type="text" placeholder="Search" />
-            <button>Go</button>
-        </form>
-    );
+    return <div>search bar</div>;
 };
 
 export default SearchBar;
